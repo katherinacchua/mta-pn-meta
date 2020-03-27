@@ -15,7 +15,7 @@ SCHEME   STDERR
 AVERAGEFREQ ON
 MINMAXFREQ ON
 
-# To restric meta-analysis to two previously reported SNPs
+# To restrict meta-analysis to two previously reported SNPs
 # and summarize study specific results, uncomment the two
 # lines that follow.
 # ADDFILTER SNP IN (rs10830963,rs563694)
@@ -29,7 +29,7 @@ EFFECT   BadjAGE
 STDERR   SEadjAGE
 PVAL     pvaladjAGE
 
-PROCESS CALGB40101_Cox_PN2_results_adjdose_ageonly_SE_chr1_imp.dsdat.ALL_sub.txt
+PROCESS CALGB40101_Cox_PN2_results_adjdose_ageonly_SE_chr1_imp.dsdat.ALL.txt
 
 # Describe and process the C40502 input files
 MARKER   SNP
@@ -39,7 +39,7 @@ EFFECT   beta
 STDERR   se
 PVAL     wpval
 
-PROCESS CALGB40502_Cox_PN2_results_adjdose_chr1_imp.dsdat.META_sub.txt
+PROCESS CALGB40502_Cox_PN2_results_adjdose_chr1_imp.dsdat.META.txt
 
 # Execute meta-analysis
 OUTFILE   METAANALYSISchr1. .TBL
