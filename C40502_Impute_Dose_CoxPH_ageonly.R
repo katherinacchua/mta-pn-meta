@@ -1,5 +1,4 @@
-### This script is to pull post-imputation data in 100,000 snp chunks and run through 
-### the CoxPH analysis. 
+### This script is to pull post-imputation data in 100,000 snp chunks and run through the CoxPH analysis. 
 
 ### Inputs for this pipeline are:
 ### PARAM1 = this script and PARAM2 = vcf.gz 
@@ -21,7 +20,7 @@ setwd(basedir)
 args <- commandArgs(T)
 
 ## Files to read in 
-info_Name <- args[1]
+info_Name <- args[1] 
 
 
 library(VariantAnnotation, lib.loc = libdir)
