@@ -1,0 +1,46 @@
+# If want to run meta-analysis weighted by standard error 
+# (it does not work well when different studies used very different transformations)
+# then uncomment the next line
+SCHEME   STDERR
+
+# Usually, it is a good to apply genomic control to each
+# input file unless all markers examined reside in strongly associated loci
+# This adjustment is very strict cutoff for anything above 1 so I've decided to not use it
+# Turn on genomic control by uncommenting the following line.
+# GENOMICCONTROL ON
+
+# To help identify allele flips, it can be useful to track
+# allele frequencies in the meta-analysis. To enable this
+# capability, uncomment the following two lines.
+AVERAGEFREQ ON
+MINMAXFREQ ON
+
+# To restric meta-analysis to two previously reported SNPs
+# and summarize study specific results, uncomment the two
+# lines that follow.
+# ADDFILTER SNP IN (rs10830963,rs563694)
+# VERBOSE ON
+
+# Describe and process the C40101 input files
+MARKER   snpid
+ALLELE   ALT REF
+FREQ     MAF
+EFFECT   BadjAGE
+STDERR   SEadjAGE
+PVAL     pvaladjAGE
+
+PROCESS CALGB40101_Cox_PN2_results_adjdose_ageonly_SE_chr1_imp.dsdat.ALL_sub.txt
+
+# Describe and process the C40502 input files
+MARKER   SNP
+ALLELE   ALT REF
+FREQ     MAF
+EFFECT   beta
+STDERR   se
+PVAL     wpval
+
+PROCESS CALGB40502_Cox_PN2_results_adjdose_chr1_imp.dsdat.META_sub.txt
+
+# Execute meta-analysis
+OUTFILE   METAANALYSISchr1. .TBL
+ANALYZE   HETEROGENEITY
